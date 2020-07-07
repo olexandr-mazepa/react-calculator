@@ -1,0 +1,101 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "google"],
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-var": 2,
+    "no-console": 0,
+    "no-useless-escape": 0,
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "ignore"
+    }],
+    "no-empty": [
+      2,
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "no-spaced-func": 2,
+    "space-in-parens": [
+      2,
+      "never"
+    ],
+    "key-spacing": [
+      2,
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "no-mixed-spaces-and-tabs": 2,
+    "no-trailing-spaces": [
+      2,
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "comma-spacing": [
+      2,
+      {
+        "after": true,
+        "before": false
+      }
+    ],
+    "max-len": [
+      1,
+      200
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "no-invalid-this": 0,
+    "padded-blocks": [
+      2,
+      { "classes": "always" }
+    ],
+    "camelcase": [
+      1,
+      { "properties": "never" }
+    ],
+    "require-jsdoc": 0,
+    "valid-jsdoc": 0,
+    "no-control-regex": 0,
+    "prefer-const": 1,
+    "new-cap": 0,
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ]
+  }
+}

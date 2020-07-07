@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.swagger-ui .info {
+  margin: 10px 0;
+}
+.swagger-ui .opblock {
+  margin-bottom: 8px;
+}
+.swagger-ui .opblock .opblock-summary-path{
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.swagger-ui .opblock .opblock-summary{
+  padding: 1px;
+}
+.swagger-ui .btn{
+  font-family: Arial, sans-serif;
+  border: 1px solid #888;
+  font-weight: normal;
+}
+.swagger-ui select{
+  font-family: Arial, sans-serif;
+  border: 1px solid #888;
+  font-weight: normal;
+  font-size: 14px;
+}
+.swagger-ui .response-col_description__inner span{
+  background-color: #fcf6db;
+  border: 1px solid #e5e0c6;
+  color: #000000;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Anonymous Pro","Menlo","Consolas","Bitstream Vera Sans Mono","Courier New",monospace;
+}
+.swagger-ui .opblock-body pre{
+  background-color: #fcf6db;
+  border: 1px solid #e5e0c6;
+  color: #000000;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Anonymous Pro","Menlo","Consolas","Bitstream Vera Sans Mono","Courier New",monospace;
+}
+.swagger-ui .opblock-body pre span{
+  color: #000000 !important;
+}
+.swagger-ui .opblock-tag{
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.swagger-ui .model-title{
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.swagger-ui .model-box{
+  padding: 0 4px 4px 4px;
+}
+.swagger-ui section.models .model-container:first-of-type,
+.swagger-ui section.models .model-container,
+.swagger-ui section.models .model-container:last-of-type{
+  margin: 0 10px 10px 10px;
+}
+.swagger-ui .opblock .opblock-section-header label,
+.swagger-ui .opblock .opblock-section-header h2,
+.swagger-ui .opblock .opblock-section-header h3,
+.swagger-ui .opblock .opblock-section-header h4{
+  font-family: Arial, sans-serif;
+}
+.swagger-ui .parameter__name{
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+.swagger-ui .parameters-col_description p{
+  font-family: Arial, sans-serif;
+}
+.swagger-ui input[type="email"], .swagger-ui input[type="password"], .swagger-ui input[type="search"], .swagger-ui input[type="text"]{
+  padding: 5px 5px;
+}
+.swagger-ui .wrapper{
+  max-width: 1000px;
+}
+.swagger-ui table tbody tr td:first-of-type{
+  padding: 5px 0;
+}
+.swagger-ui table tbody tr td{
+  padding: 5px 0 0;
+}
+.swagger-ui .table-container{
+  padding: 10px 20px;
+}
+.swagger-ui .execute-wrapper{
+  padding: 5px;
+}
+.swagger-ui textarea, .swagger-ui textarea:focus{
+  border: 1px solid #aaa;
+}
+.swagger-ui .btn{
+  padding: 5px 15px;
+}
+.swagger-ui .btn-clear{
+  background: #fff;
+  color: #000;
+}
+.swagger-ui .opblock .opblock-summary-method {
+  padding: 5px 10px;
+}
+.swagger-ui .scheme-container{
+  padding: 10px 0;
+}
