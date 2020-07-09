@@ -9,13 +9,14 @@ module.exports = class CalculationService {
    */
   doOperation(firstOperand, secondOperand, operation) {
     let result;
-    if (operation === 'plus') {
+
+    if (operation === '+') {
       result = Decimal(firstOperand).plus(secondOperand);
-    } else if (operation === 'multiply') {
+    } else if (operation === '*') {
       result = Decimal(firstOperand).times(Decimal(secondOperand));
-    } else if (operation === 'subtract') {
+    } else if (operation === '-') {
       result = Decimal(firstOperand).minus(secondOperand);
-    } else if (operation === 'divide') {
+    } else if (operation === '/') {
       result = Decimal(firstOperand).div(secondOperand);
     }
 

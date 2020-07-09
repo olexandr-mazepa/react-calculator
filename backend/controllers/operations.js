@@ -7,81 +7,38 @@ module.exports = class OperatorsController {
   }
 
   _validateQuery(query) {
-    const res = { errors: [] };
 
     if (!Object.prototype.hasOwnProperty.call(query, 'firstOperand')) {
-      res.errors.push('A required query parameter \'firstOperand\' was not specified for this request');
+      return 'A required query parameter \'firstOperand\' was not specified for this request';
     }
 
     if (!Object.prototype.hasOwnProperty.call(query, 'secondOperand')) {
-      res.errors.push('A required query parameter \'secondOperand\' was not specified for this request');
+      return 'A required query parameter \'secondOperand\' was not specified for this request';
     }
 
-    return res;
+    if (!Object.prototype.hasOwnProperty.call(query, 'operator')) {
+      return 'A required query parameter \'operator\' was not specified for this request';
+    }
+
+    const allowedOperators = ['+', '*', '-', '/'];
+    if (!allowedOperators.includes(query.operator)) {
+      return `Unknown operator '${query.operator}'`;
+    }
+
+    return '';
   }
 
-  add(req, res) {
+  calculate(req, res) {
     try {
-      const validationRes = this._validateQuery(req.query);
-      if (validationRes && validationRes.errors && validationRes.errors.length) {
-        return res.invalidRequest(validationRes.errors);
+      const validationErr = this._validateQuery(req.query);
+      if (validationErr) {
+        return res.invalidRequest(validationErr);
       }
 
       const {
-        firstOperand, secondOperand
+        firstOperand, secondOperand, operator
       } = req.query;
-      const result = this.calcService.doOperation(firstOperand, secondOperand, 'plus');
-      return res.status(200).send(result);
-    } catch (error) {
-      return res.serverError(error);
-    }
-  }
-
-  subtract(req, res) {
-    try {
-      const validationRes = this._validateQuery(req.query, res);
-      if (validationRes && validationRes.errors && validationRes.errors.length) {
-        return res.invalidRequest(validationRes.errors);
-      }
-
-      const {
-        firstOperand, secondOperand
-      } = req.query;
-      const result = this.calcService.doOperation(firstOperand, secondOperand, 'subtract');
-      return res.status(200).send(result);
-    } catch (error) {
-      return res.serverError(error);
-    }
-  }
-
-  multiply(req, res) {
-    try {
-      const validationRes = this._validateQuery(req.query, res);
-      if (validationRes && validationRes.errors && validationRes.errors.length) {
-        return res.invalidRequest(validationRes.errors);
-      }
-
-      const {
-        firstOperand, secondOperand
-      } = req.query;
-      const result = this.calcService.doOperation(firstOperand, secondOperand, 'multiply');
-      return res.status(200).send(result);
-    } catch (error) {
-      return res.serverError(error);
-    }
-  }
-
-  divide(req, res) {
-    try {
-      const validationRes = this._validateQuery(req.query, res);
-      if (validationRes && validationRes.errors && validationRes.errors.length) {
-        return res.invalidRequest(validationRes.errors);
-      }
-
-      const {
-        firstOperand, secondOperand
-      } = req.query;
-      const result = this.calcService.doOperation(firstOperand, secondOperand, 'divide');
+      const result = this.calcService.doOperation(firstOperand, secondOperand, operator);
       return res.status(200).send(result);
     } catch (error) {
       return res.serverError(error);

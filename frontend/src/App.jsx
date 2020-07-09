@@ -3,7 +3,7 @@ import './App.css';
 import { Button } from './components/Button';
 import { DisplayPart } from './components/DisplayPart';
 import { ClearButton } from './components/ClearButton';
-import CalculationService from "./services/calc";
+import CalculationService from './services/calc';
 
 function App() {
   const [input, updateInput] = useState('');
@@ -40,7 +40,7 @@ function App() {
     updateInput('');
     updatePrevious('');
     updateOperator('');
-    updateErr('')
+    updateErr('');
   };
 
   const handleBackspace = () => {
@@ -55,7 +55,7 @@ function App() {
         updateInput(calculationRes.toString());
         updatePrevious('');
         updateOperator('');
-        updateErr('')
+        updateErr('');
       } catch (error) {
         updateErr(error.message);
       }

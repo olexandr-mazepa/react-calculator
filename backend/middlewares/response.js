@@ -35,13 +35,12 @@ module.exports = () => (req, res, next) => {
   res.notFound = function(resource) {
 
     return res.status(404).send({
-      errors: [
-        {
-          code: 'resource_not_found',
-          message: getErrorMessage('resource_not_found'),
-          field: resource
-        }
-      ]
+      error: {
+        code: 'resource_not_found',
+        message: getErrorMessage('resource_not_found'),
+        field: resource
+      }
+
     });
 
   };
@@ -57,25 +56,21 @@ module.exports = () => (req, res, next) => {
     req.app.logger.error(error);
 
     return res.status(500).send({
-      errors: [
-        {
-          code: 'internal_server_error',
-          message: getErrorMessage('internal_server_error')
-        }
-      ]
+      error: {
+        code: 'internal_server_error',
+        message: getErrorMessage('internal_server_error')
+      }
     });
 
   };
 
-  res.invalidRequest = function(errorMessages) {
-    const errors = errorMessages.map(message => {
-      return {
-        code: 'invalid_request',
-        message: message
-      };
-    });
+  res.invalidRequest = function(errorMessage) {
+
     return res.status(400).send({
-      errors
+      error: {
+        code: 'invalid_request',
+        message: errorMessage
+      }
     });
 
   };

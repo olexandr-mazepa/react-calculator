@@ -26,7 +26,7 @@ module.exports.init = app => {
         // init all routes
         require(apiDir + '/' + file).init(app);
 
-        app.logger.info(`route ${file} has been idealized`);
+        app.logger.info(`route ${file} has been initialized`);
 
       } catch (e) {
 
@@ -41,7 +41,7 @@ module.exports.init = app => {
   if (env === 'development') {
     const swagger = require('../modules/swagger');
     swagger(app, '/api/docs/', '/api/swagger.json', endpoints);
-    app.logger.info('routes /api/docs/ has been idealized');
+    app.logger.info('routes /api/docs/ has been initialized');
 
   }
 
