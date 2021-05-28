@@ -9,7 +9,7 @@ const cors = require('cors');
 
 const app = express();
 app.logger = logger;
-// extend res object
+
 app.use(responseMiddleware());
 app.use(cors());
 app.use(morgan('dev'));
